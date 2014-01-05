@@ -368,11 +368,10 @@ int dram_init(void)
 static void setup_uart(void)
 {
 #if defined CONFIG_MX6Q
-	/* UART1 TXD */
-	mxc_iomux_v3_setup_pad(MX6Q_PAD_CSI0_DAT10__UART1_TXD);
-
-	/* UART1 RXD */
-	mxc_iomux_v3_setup_pad(MX6Q_PAD_CSI0_DAT11__UART1_RXD);
+        /* UART4 TXD */
+        mxc_iomux_v3_setup_pad(MX6Q_PAD_KEY_COL0__UART4_TXD);
+        /* UART4 RXD */
+	mxc_iomux_v3_setup_pad(MX6Q_PAD_KEY_ROW0__UART4_RXD);
 #elif defined CONFIG_MX6DL
 	/* UART1 TXD */
 	mxc_iomux_v3_setup_pad(MX6DL_PAD_CSI0_DAT10__UART1_TXD);
