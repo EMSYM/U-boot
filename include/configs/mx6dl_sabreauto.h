@@ -301,7 +301,7 @@
 #ifdef CONFIG_DDR_32BIT
 #define PHYS_SDRAM_1_SIZE       (1u * 1024 * 1024 * 1024)
 #else
-#define PHYS_SDRAM_1_SIZE	(2u * 1024 * 1024 * 1024)
+#define PHYS_SDRAM_1_SIZE	(1u * 1024 * 1024 * 1024)
 #endif
 #define iomem_valid_addr(addr, size) \
 	(addr >= PHYS_SDRAM_1 && addr <= (PHYS_SDRAM_1 + PHYS_SDRAM_1_SIZE))
