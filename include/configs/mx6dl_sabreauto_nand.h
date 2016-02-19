@@ -67,7 +67,7 @@
  * Hardware drivers
  */
 #define CONFIG_MXC_UART
-#define CONFIG_UART_BASE_ADDR   UART4_BASE_ADDR
+#define CONFIG_UART_BASE_ADDR   UART1_BASE_ADDR
 
 /* allow to overwrite serial and ethaddr */
 #define CONFIG_ENV_OVERWRITE
