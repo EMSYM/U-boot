@@ -123,11 +123,11 @@ static iomux_v3_cfg_t const enet_pads[] = {
 
 /* I2C2 PMIC, iPod, Tuner, Codec, Touch, HDMI EDID, MIPI CSI2 card */
 static struct i2c_pads_info i2c_pad_info1 = {
-	.scl = {
-		.i2c_mode = MX6_PAD_EIM_EB2__I2C2_SCL | PC,
-		.gpio_mode = MX6_PAD_EIM_EB2__GPIO2_IO30 | PC,
-		.gp = IMX_GPIO_NR(2, 30)
-	},
+        .scl = {
+                .i2c_mode = MX6_PAD_KEY_COL3__I2C2_SCL | PC,
+                .gpio_mode = MX6_PAD_KEY_COL3__GPIO4_IO12 | PC,
+                .gp = IMX_GPIO_NR(4, 12)
+        },
 	.sda = {
 		.i2c_mode = MX6_PAD_KEY_ROW3__I2C2_SDA | PC,
 		.gpio_mode = MX6_PAD_KEY_ROW3__GPIO4_IO13 | PC,
