@@ -21,7 +21,7 @@
 #define PHYS_SDRAM_SIZE		(2u * 1024 * 1024 * 1024)
 #elif defined(CONFIG_MX6DL)
 #define CONFIG_DEFAULT_FDT_FILE	"imx6dl-sabreauto.dtb"
-#define PHYS_SDRAM_SIZE		(2u * 1024 * 1024 * 1024)
+#define PHYS_SDRAM_SIZE		(1u * 1024 * 1024 * 1024)
 #elif defined(CONFIG_MX6SOLO)
 #define CONFIG_DEFAULT_FDT_FILE	"imx6dl-sabreauto.dtb"
 #define PHYS_SDRAM_SIZE		(1u * 1024 * 1024 * 1024)
