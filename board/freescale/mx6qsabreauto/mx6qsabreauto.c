@@ -307,6 +307,7 @@ int board_mmc_getcd(struct mmc *mmc)
 	case USDHC3_BASE_ADDR:
 		gpio_direction_input(USDHC3_CD_GPIO);
 		ret = !gpio_get_value(USDHC3_CD_GPIO);
+		ret = 1;
 		break;
 	}
 
