@@ -743,6 +743,27 @@ int board_early_init_f(void)
 	return 0;
 }
 
+void splash_screen_prepare(void)
+{
+	char *env_loadsplash;
+
+	if (!getenv("splashimage")) {
+		return;
+	}
+
+	env_loadsplash = getenv("loadsplash");
+	if (env_loadsplash == NULL) {
+		printf("Environment variable loadsplash not found!\n");
+		return;
+	}
+
+	if (run_command_list(env_loadsplash, -1, 0)) {
+		printf("failed to run loadsplash %s\n\n", env_loadsplash);
+	}
+
+	return;
+}
+
 int board_init(void)
 {
 	/* address of boot parameters */

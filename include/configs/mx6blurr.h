@@ -124,4 +124,6 @@
 #define CONFIG_POWER_PFUZE100
 #define CONFIG_POWER_PFUZE100_I2C_ADDR	0x08
 
+#define CONFIG_CMD_BMP
+#define CONFIG_SPLASH_SCREEN
 #endif                         /* __MX6BLURR_CONFIG_H */
