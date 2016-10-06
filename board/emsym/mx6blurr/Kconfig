@@ -1,0 +1,15 @@
+if TARGET_MX6BLURR
+
+config SYS_BOARD
+	default "mx6blurr"
+
+config SYS_VENDOR
+	default "emsym"
+
+config SYS_SOC
+	default "mx6"
+
+config SYS_CONFIG_NAME
+	default "mx6blurr"
+
+endif
