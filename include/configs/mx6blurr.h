@@ -105,6 +105,9 @@
 #define CONFIG_LZO
 #define CONFIG_CMD_UBI
 #define CONFIG_CMD_UBIFS
+#undef CONFIG_CMD_EXT2
+#undef CONFIG_CMD_EXT4
+#undef CONFIG_CMD_EXT4_WRITE
 
 /* NAND stuff */
 #define CONFIG_NAND_MXS
