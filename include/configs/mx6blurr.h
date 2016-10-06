@@ -116,6 +116,19 @@
 #define CONFIG_SYS_NAND_5_ADDR_CYCLE
 #define CONFIG_SYS_NAND_ONFI_DETECTION
 
+#ifdef CONFIG_ENV_IS_IN_NAND
+#undef CONFIG_ENV_SECT_SIZE
+#undef CONFIG_ENV_SIZE
+#undef CONFIG_ENV_OFFSET
+#ifndef CONFIG_NAND_SECT_SIZE
+#define CONFIG_ENV_SECT_SIZE           (128 << 10)
+#else 
+#define CONFIG_ENV_SECT_SIZE CONFIG_NAND_SECT_SIZE
+#endif
+#define CONFIG_ENV_SIZE                CONFIG_ENV_SECT_SIZE
+#define CONFIG_ENV_OFFSET              (15 * CONFIG_ENV_SECT_SIZE) /* mtd0 is 16 x sector */
+#endif 
+
 /* DMA stuff, needed for GPMI/MXS NAND support */
 #define CONFIG_APBH_DMA
 #define CONFIG_APBH_DMA_BURST
