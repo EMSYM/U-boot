@@ -98,8 +98,13 @@ int dram_init(void)
 }
 
 static iomux_v3_cfg_t const uart4_pads[] = {
+#if CONFIG_CONSOLE_UART == 1
 	MX6_PAD_CSI0_DAT10__UART1_TX_DATA | MUX_PAD_CTRL(UART_PAD_CTRL),
 	MX6_PAD_CSI0_DAT11__UART1_RX_DATA | MUX_PAD_CTRL(UART_PAD_CTRL),
+#elif CONFIG_CONSOLE_UART == 4
+	MX6_PAD_CSI0_DAT10__UART1_TX_DATA | MUX_PAD_CTRL(UART_PAD_CTRL),
+	MX6_PAD_CSI0_DAT11__UART1_RX_DATA | MUX_PAD_CTRL(UART_PAD_CTRL),
+#endif
 };
 
 static iomux_v3_cfg_t const enet_pads[] = {
@@ -916,7 +921,6 @@ int checkboard(void)
 	}
 
 	printf("Board: MX6Q-Sabreauto rev%s\n", revname);
-
 	return 0;
 }
 

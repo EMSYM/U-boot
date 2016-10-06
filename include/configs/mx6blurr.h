@@ -9,8 +9,20 @@
 #ifndef __MX6BLURR_CONFIG_H
 #define __MX6BLURR_CONFIG_H
 
+#ifndef CONFIG_CONSOLE_UART
+#define CONFIG_CONSOLE_UART 1
+#endif
+
+#if CONFIG_CONSOLE_UART == 1
 #define CONFIG_MXC_UART_BASE	UART1_BASE
 #define CONFIG_CONSOLE_DEV		"ttymxc0"
+#elif CONFIG_CONSOLE_UART == 4
+#define CONFIG_MXC_UART_BASE UART4_BASE
+#define CONFIG_CONSOLE_DEV		"ttymxc3"
+#else
+#error "DEBUG UART NOT SUPPORTED"
+#endif
+
 #define CONFIG_MMCROOT			"/dev/mmcblk2p2"  /* SDHC3 */
 #if defined CONFIG_MX6QP
 #define CONFIG_DEFAULT_FDT_FILE	"imx6qp-sabreauto.dtb"
