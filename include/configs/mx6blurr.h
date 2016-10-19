@@ -63,6 +63,9 @@
 #define CONFIG_IOEXP_DEV_PINS_NUM 8
 #endif
 
+#undef CONFIG_MFG_ENV_SETTINGS
+#define CONFIG_MFG_ENV_SETTINGS "bootcmd_mfg=source 11000000\0" 
+
 #undef CONFIG_MFG_NAND_PARTITION
 #ifdef CONFIG_SYS_BOOT_NAND
 #define CONFIG_MFG_NAND_PARTITION "mtdparts=8000000.nor:1m(boot),-(rootfs)\\\\;gpmi-nand:64m(boot),16m(kernel),16m(dtb),-(rootfs) "
