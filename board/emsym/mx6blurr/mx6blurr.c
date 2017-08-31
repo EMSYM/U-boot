@@ -234,7 +234,7 @@ static iomux_v3_cfg_t const usdhc2_pads[] = {
 	MX6_PAD_SD2_DAT3__SD2_DATA3	| MUX_PAD_CTRL(USDHC_PAD_CTRL),
 
 	/*CD pin*/
-	MX6_PAD_GPIO_1__GPIO1_IO01 | MUX_PAD_CTRL(NO_PAD_CTRL),
+	MX6_PAD_GPIO_4__GPIO1_IO04 | MUX_PAD_CTRL(NO_PAD_CTRL),
 };
 
 static iomux_v3_cfg_t const usdhc3_pads[] = {
@@ -259,7 +259,7 @@ static void setup_iomux_uart(void)
 
 #ifdef CONFIG_FSL_ESDHC
 
-#define USDHC1_CD_GPIO	IMX_GPIO_NR(1, 1)
+#define USDHC2_CD_GPIO	IMX_GPIO_NR(1, 4)
 #define USDHC3_CD_GPIO	IMX_GPIO_NR(6, 15)
 
 static struct fsl_esdhc_cfg usdhc_cfg[2] = {
@@ -306,8 +306,8 @@ int board_mmc_getcd(struct mmc *mmc)
 
 	switch (cfg->esdhc_base) {
 	case USDHC2_BASE_ADDR:
-		gpio_direction_input(USDHC1_CD_GPIO);
-		ret = !gpio_get_value(USDHC1_CD_GPIO);
+		gpio_direction_input(USDHC2_CD_GPIO);
+		ret = !gpio_get_value(USDHC2_CD_GPIO);		
 		break;
 	case USDHC3_BASE_ADDR:
 		gpio_direction_input(USDHC3_CD_GPIO);
@@ -334,7 +334,7 @@ int board_mmc_init(bd_t *bis)
 		case 0:
 			imx_iomux_v3_setup_multiple_pads(
 				usdhc2_pads, ARRAY_SIZE(usdhc2_pads));
-			gpio_direction_input(USDHC1_CD_GPIO);
+			gpio_direction_input(USDHC2_CD_GPIO);
 			usdhc_cfg[0].sdhc_clk = mxc_get_clock(MXC_ESDHC_CLK);
 			break;
 		case 1:
