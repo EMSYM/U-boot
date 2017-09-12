@@ -101,7 +101,7 @@
 #define CONFIG_CMD_SETEXPR
 #undef CONFIG_CMD_IMLS
 
-#define CONFIG_BOOTDELAY               1
+#define CONFIG_BOOTDELAY               20
 
 #define CONFIG_LOADADDR                        0x12000000
 #define CONFIG_SYS_TEXT_BASE           0x17800000
