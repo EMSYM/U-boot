@@ -285,7 +285,8 @@ int mmc_get_env_devno(void)
 	/* need ubstract 1 to map to the mmc3 device id
 	 * see the comments in board_mmc_init function
 	 */
-	if (2 == dev_no)
+	//if (2 == dev_no )
+	if(dev_no > 0)
 		dev_no--;
 
 	return dev_no;
